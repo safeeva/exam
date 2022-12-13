@@ -23,7 +23,11 @@
                 <?if ($arItem["IS_PARENT"]){?>
 
                     <?if ($arItem["DEPTH_LEVEL"] == 1){?>
-                        <li><a href="<?=$arItem["LINK"]?>" class="<?if ($arItem["SELECTED"]):?>root-item-selected<?else:?>root-item<?endif?>"><?=$arItem["TEXT"]?></a>
+                    <?$classStyle = "";
+                    if (!empty($arItem["PARAMS"]["CLASS_STYLE"])) {
+                        $classStyle = $arItem["PARAMS"]["CLASS_STYLE"];
+                    }?>
+                        <li><a href="<?=$arItem["LINK"]?>" class="<?=$classStyle;?> <?if ($arItem["SELECTED"]):?>root-item-selected<?else:?>root-item<?endif?>"><?=$arItem["TEXT"]?></a>
                         <ul>
                     <?} else {?>
                         <li<?if ($arItem["SELECTED"]):?> class="item-selected"<?endif?>><a href="<?=$arItem["LINK"]?>" class="parent"><?=$arItem["TEXT"]?></a>
@@ -31,11 +35,7 @@
                     <?}?>
                             <?if (!empty($arItem["PARAMS"]["DESCRIPTION"])) {?>
                                 <div class="menu-text"><?=$arItem["PARAMS"]["DESCRIPTION"]?>></div>
-
-
-
-                                
-                          <? }?>
+                           <?}?>
                 <?} else {?>
 
                     <?if ($arItem["PERMISSION"] > "D"){?>

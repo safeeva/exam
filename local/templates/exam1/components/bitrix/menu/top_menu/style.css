@@ -39,6 +39,8 @@ ul.left-menu li a.selected:hover
 {
 	color:#FC8D3D;
 }
-
+.nav .menu .color-red{
+	color: #ff0000;
+}
 
 

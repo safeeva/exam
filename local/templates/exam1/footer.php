@@ -157,8 +157,18 @@ IncludeTemplateLangFile(__FILE__);
             <div class="title-block"><?=GetMessage("DEF_TEMPLATE_NF")?></div>
             <div class="loc-block">
                 <div class="address">ул. Летняя, стр.12, офис 512</div>
-                <div class="phone"><a href="tel:84952128506">8 (495) 212-85-06</a>
-                </div>
+                    <?$APPLICATION->IncludeComponent(
+        "bitrix:main.include",
+        ".default",
+                    array(
+                        "AREA_FILE_SHOW" => "file",
+                        "AREA_FILE_SUFFIX" => "inc",
+                        "EDIT_TEMPLATE" => "",
+                        "PATH" => "/include/footer_phone.php",
+                        "COMPONENT_TEMPLATE" => ".default"
+                    ),
+                    false
+                );?>
             </div>
             <div class="main-soc-block">
                 <a href="" class="soc-item">

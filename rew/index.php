@@ -2,9 +2,9 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Отзывы");
 ?><?$APPLICATION->IncludeComponent(
-	"bitrix:news", 
-	"rew", 
-	array(
+	"bitrix:news",
+	"rew",
+	Array(
 		"ADD_ELEMENT_CHAIN" => "Y",
 		"ADD_SECTIONS_CHAIN" => "N",
 		"AJAX_MODE" => "N",
@@ -18,21 +18,15 @@ $APPLICATION->SetTitle("Отзывы");
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
+		"COMPONENT_TEMPLATE" => "rew",
 		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
-		"DETAIL_FIELD_CODE" => array(
-			0 => "",
-			1 => "",
-		),
+		"DETAIL_FIELD_CODE" => array(0=>"",1=>"",),
 		"DETAIL_PAGER_SHOW_ALL" => "Y",
 		"DETAIL_PAGER_TEMPLATE" => "",
 		"DETAIL_PAGER_TITLE" => "Отзывы",
-		"DETAIL_PROPERTY_CODE" => array(
-			0 => "POSITION",
-			1 => "COMPANY",
-			2 => "",
-		),
+		"DETAIL_PROPERTY_CODE" => array(0=>"POSITION",1=>"COMPANY",2=>"",),
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_DATE" => "Y",
@@ -46,16 +40,8 @@ $APPLICATION->SetTitle("Отзывы");
 		"IBLOCK_TYPE" => "rew",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"LIST_FIELD_CODE" => array(
-			0 => "DATE_ACTIVE_FROM",
-			1 => "ACTIVE_FROM",
-			2 => "",
-		),
-		"LIST_PROPERTY_CODE" => array(
-			0 => "POSITION",
-			1 => "COMPANY",
-			2 => "",
-		),
+		"LIST_FIELD_CODE" => array(0=>"DATE_ACTIVE_FROM",1=>"ACTIVE_FROM",2=>"",),
+		"LIST_PROPERTY_CODE" => array(0=>"POSITION",1=>"COMPANY",2=>"",),
 		"MESSAGE_404" => "",
 		"META_DESCRIPTION" => "-",
 		"META_KEYWORDS" => "-",
@@ -68,7 +54,9 @@ $APPLICATION->SetTitle("Отзывы");
 		"PAGER_TEMPLATE" => ".default",
 		"PAGER_TITLE" => "Отзывы",
 		"PREVIEW_TRUNCATE_LEN" => "",
+		"SEF_FOLDER" => "/rew/",
 		"SEF_MODE" => "Y",
+		"SEF_URL_TEMPLATES" => array("news"=>"","section"=>"","detail"=>"#ELEMENT_CODE#/",),
 		"SET_LAST_MODIFIED" => "N",
 		"SET_STATUS_404" => "Y",
 		"SET_TITLE" => "Y",
@@ -85,14 +73,6 @@ $APPLICATION->SetTitle("Отзывы");
 		"USE_REVIEW" => "N",
 		"USE_RSS" => "N",
 		"USE_SEARCH" => "N",
-		"USE_SHARE" => "N",
-		"COMPONENT_TEMPLATE" => "rew",
-		"SEF_FOLDER" => "/rew/",
-		"SEF_URL_TEMPLATES" => array(
-			"news" => "",
-			"section" => "",
-			"detail" => "#ELEMENT_CODE#/",
-		)
-	),
-	false
+		"USE_SHARE" => "N"
+	)
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

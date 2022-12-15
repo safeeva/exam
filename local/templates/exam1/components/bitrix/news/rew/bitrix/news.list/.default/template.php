@@ -43,19 +43,25 @@ $this->setFrameMode(true);
         </div>
         <div class="review-img-wrap">
             <a href="<?=$arItem["DETAIL_PAGE_URL"]?>">
-                <?if(isset($arItem["PREVIEW_PICTURE"]["SRC"])){
-                        $img = $arItem["PREVIEW_PICTURE"]["SRC"];?>
-                <?} else {
-                        $img = SITE_TEMPLATE_PATH."/img/rew/no_photo.jpg";
-                }?>
-                <img
-                    class=""
-                    src="<?=$img?>"
-                    width="<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>"
-                    height="<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>"
-                    alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>"
-                    title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>"
-                />
+                <? if (is_array($arItem["DETAIL_PICTURE"])): ?>
+                    <?php
+                    $arImage = CFile::ResizeImageGet(
+                        $arItem["DETAIL_PICTURE"]["ID"],
+                        ["width" => 68, "height" => 50],
+                        BX_RESIZE_IMAGE_EXACT,
+                        true
+                    );
+                    ?>
+
+                    <img src="<?= $arImage["src"] ?>"
+                         width="<?= $arImage["width"] ?>"
+                         height="<?= $arImage["height"] ?>"
+                         alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>"
+                         title="<?= $arItem["PREVIEW_PICTURE"]["TITLE"] ?>"
+                    />
+                <? else: ?>
+                    <img src="<?= SITE_TEMPLATE_PATH ?>/img/rew/no_photo.jpg" alt="img">
+                <? endif; ?>
             </a>
         </div>
     </div>
